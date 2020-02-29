@@ -4,8 +4,12 @@
     <home-swiper :banners="banners" />
     <recommend-view :recommends="recommends" />
     <feature-view />
-    <tab-control class="tab-control" :titles="['流行', '新款', '精选']" />
-    <goods-list :goods="goods['pop'].list" />
+    <tab-control
+      class="tab-control"
+      :titles="['流行', '新款', '精选']"
+      @tabClick="tabClick"
+    />
+    <goods-list :goods="showGoods" />
     <ul>
       <li>列表1</li>
       <li>列表2</li>
@@ -140,7 +144,8 @@ export default {
         pop: { page: 0, list: [] },
         new: { page: 0, list: [] },
         sell: { page: 0, list: [] }
-      }
+      },
+      currentType: "pop"
     };
   },
   created() {
@@ -152,7 +157,28 @@ export default {
     this.getHomeGoods("new");
     this.getHomeGoods("sell");
   },
+  computed: {
+    showGoods() {
+      return this.goods[this.currentType].list;
+    }
+  },
   methods: {
+    //事件监听
+    tabClick(index) {
+      switch (index) {
+        case 0:
+          this.currentType = "pop";
+          break;
+        case 1:
+          this.currentType = "new";
+          break;
+        case 2:
+          this.currentType = "sell";
+          break;
+      }
+    },
+
+    //网络请求
     getHomeMultidata() {
       getHomeMultidata().then(res => {
         //console.log(res);
@@ -188,5 +214,6 @@ export default {
 .tab-control {
   position: sticky;
   top: 44px;
+  z-index: 9;
 }
 </style>
