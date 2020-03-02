@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper" ref="aaa">
     <ul class="content">
+      <button @click="btnClick">按钮</button>
       <li>分类列表1</li>
       <li>分类列表2</li>
       <li>分类列表3</li>
@@ -119,7 +120,24 @@ export default {
   //   this.scroll = new BScroll(this.$refs.aaa, {});
   // },
   mounted() {
-    this.scroll = new BScroll(document.querySelector(".wrapper"), {});
+    this.scroll = new BScroll(document.querySelector(".wrapper"), {
+      probeType: 3,
+      pullUpLoad: true,
+      click: true
+      //click无论是否设置click：false ，button都可以点击
+      //必须设置click：true， div元素才能监听点击
+    });
+    this.scroll.on("scroll", position => {
+      //console.log(position);
+    });
+    this.scroll.on("pullingUp", position => {
+      console.log("上拉加载更多");
+    });
+  },
+  methods: {
+    btnClick() {
+      console.log("btnClick");
+    }
   }
 };
 </script>
