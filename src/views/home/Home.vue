@@ -7,15 +7,13 @@
       :probe-type="3"
       @scroll="contentScroll"
       :pull-up-load="true"
+      @pullingUp="loadMore"
     >
       <home-swiper :banners="banners" />
+      <!-- @swiperImageLoad="swiperImageLoad" -->
       <recommend-view :recommends="recommends" />
       <feature-view />
-      <tab-control
-        class="tab-control"
-        :titles="['流行', '新款', '精选']"
-        @tabClick="tabClick"
-      />
+      <tab-control :titles="['流行', '新款', '精选']" @tabClick="tabClick" />
       <goods-list :goods="showGoods" />
     </scroll>
     <!-- .native 监听原生事件时必须加上.native 才能监听 -->
@@ -59,7 +57,8 @@ export default {
         sell: { page: 0, list: [] }
       },
       currentType: "pop",
-      isShowBackTop: false
+      isShowBackTop: false,
+      tabOffsetTop: 0
     };
   },
   computed: {
@@ -77,10 +76,15 @@ export default {
     this.getHomeGoods("sell");
   },
   mounted() {
+    //图片加载完成事件监听
     const refresh = debounce(this.$refs.scroll.refresh, 200);
     this.$bus.$on("itemImageLoad", () => {
       refresh();
     });
+
+    //获取去tabControl的offsetTop
+    //所有的组件都有一个属性：$el:用于获取组件中的元素
+  
   },
   methods: {
     /**
@@ -106,6 +110,12 @@ export default {
     contentScroll(position) {
       this.isShowBackTop = -position.y > 1000;
     },
+    loadMore() {
+      this.getHomeGoods(this.currentType);
+    },
+    // swiperImageLoad() {
+    //   console.log(this.$refs.tabControl.$el.offsetTop);
+    // },
 
     /**
      * 网络请求
@@ -124,6 +134,9 @@ export default {
         //...:展开语法：可以在函数调用/数组构造时, 将数组表达式或者string在
         //语法层面展开；还可以在构造字面量对象时, 将对象表达式按key-value的方式展开。
         this.goods[type].page += 1;
+
+        //完成上拉加载更多
+        this.$refs.scroll.finishPullUp();
       });
     }
   }
@@ -144,11 +157,6 @@ export default {
   right: 0;
   left: 0;
   top: 0;
-  z-index: 9;
-}
-.tab-control {
-  position: sticky;
-  top: 44px;
   z-index: 9;
 }
 
