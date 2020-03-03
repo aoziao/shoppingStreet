@@ -25,9 +25,17 @@ export default {
       }
     }
   },
+  data() {
+    return {
+      isLoad: false
+    };
+  },
   methods: {
     imageLoad() {
-      this.$emit("swiperImageLoad");
+      if (!this.isLoad) {
+        this.$emit("swiperImageLoad");
+        this.isLoad = true;
+      }
     }
   }
 };

@@ -1,5 +1,5 @@
 <template>
-  <div class="goods-item">
+  <div class="goods-item" @click="itemClick">
     <img :src="goodsItem.show.img" alt="" @load="imgeLoad" />
     <div class="goods-info">
       <p>{{ goodsItem.title }}</p>
@@ -23,6 +23,9 @@ export default {
   methods: {
     imgeLoad() {
       this.$bus.$emit("itemImageLoad");
+    },
+    itemClick() {
+      console.log("-------");
     }
   }
 };
