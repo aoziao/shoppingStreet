@@ -42,12 +42,12 @@ export default {
 .base-info {
   margin-top: 15px;
   padding: 0 8px;
-  color: #999;
+  color: #333;
   border-bottom: 5px solid #f2f5f8;
 }
 
 info-title {
-  color: #222;
+  color: #333;
 }
 
 .info-price {
@@ -82,9 +82,11 @@ info-title {
   margin-top: 15px;
   line-height: 30px;
   display: flex;
+  color: #999;
   font-size: 13px;
   border-bottom: 1px solid rgba(100, 100, 100, 0.1);
   justify-content: space-between;
+
   /*justify-content:在弹性盒对象的 <div> 元素中的各项周围留有空白： */
 }
 

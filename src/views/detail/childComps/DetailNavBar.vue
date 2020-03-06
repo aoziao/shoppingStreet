@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav-bar>
-      <div slot="left" @click="backClick">
+      <div slot="left" class="back" @click="backClick">
         <img src="~assets/img/common/back.svg" class="back" alt="" />
       </div>
       <div slot="center" class="title">
@@ -52,6 +52,6 @@ export default {
   color: var(--color-high-text);
 }
 .back {
-  margin-top: 10px;
+  margin-top: 6px;
 }
 </style>
