@@ -33,6 +33,8 @@ import {
   GoodsParam,
   getRecommend
 } from "network/detail";
+import { debounce } from "common/utils";
+import { itemListerMixin } from "common/mixin";
 export default {
   name: "Detail",
   components: {
@@ -46,6 +48,7 @@ export default {
     Scroll,
     GoodsList
   },
+  mixins: [itemListerMixin],
   data() {
     return {
       iid: null,
@@ -55,7 +58,8 @@ export default {
       detailInfo: {},
       paramInfo: {},
       commentInfo: {},
-      recommends: []
+      recommends: [],
+      
     };
   },
   created() {
@@ -106,6 +110,10 @@ export default {
     imageLoad() {
       this.$refs.scroll.refresh();
     }
+  },
+  mounted() {},
+  destroyed() {
+    this.$bus.$off("itemImageLoad", this.itemimglistener);
   }
 };
 </script>
