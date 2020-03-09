@@ -7,6 +7,9 @@
       :probe-type="3"
       @scroll="contentScroll"
     >
+      <ul>
+        <li v-for="item in $store.state.cartList">{{ item }}</li>
+      </ul>
       <detail-swiper :top-images="topImages" />
       <detail-base-info :goods="goods" />
       <detail-shop-info :shop="shop" />
@@ -16,6 +19,8 @@
       <div class="like">猜你喜欢</div>
       <goods-list :goods="recommends" ref="recommend" />
     </scroll>
+    <detail-bottom-bar @addCart="addToCart" />
+    <back-top @click.native="backClick" v-show="isShowBackTop" />
   </div>
 </template>
 
@@ -27,6 +32,7 @@ import DetailShopInfo from "./childComps/DetailShopInfo";
 import DetailGoodsInfo from "./childComps/DetailGoodsInfo";
 import DetailParamInfo from "./childComps/DetailParamInfo";
 import DetailCommentInfo from "./childComps/DetailCommentInfo";
+import DetailBottomBar from "./childComps/DetailBottomBar";
 
 import Scroll from "components/common/scroll/Scroll";
 import GoodsList from "components/content/goods/GoodsList";
@@ -39,7 +45,7 @@ import {
   getRecommend
 } from "network/detail";
 import { debounce } from "common/utils";
-import { itemListerMixin } from "common/mixin";
+import { itemListerMixin, backTopMixin } from "common/mixin";
 export default {
   name: "Detail",
   components: {
@@ -50,10 +56,11 @@ export default {
     DetailGoodsInfo,
     DetailParamInfo,
     DetailCommentInfo,
+    DetailBottomBar,
     Scroll,
     GoodsList
   },
-  mixins: [itemListerMixin],
+  mixins: [itemListerMixin, backTopMixin],
   data() {
     return {
       iid: null,
@@ -75,7 +82,7 @@ export default {
 
     //根据传入的iid请求相应的数据
     getDetail(this.iid).then(res => {
-      console.log(res);
+      // console.log(res);
 
       //获取顶部轮播数据
       const data = res.result;
@@ -107,7 +114,7 @@ export default {
     }),
       //请求推荐数据
       getRecommend().then(res => {
-        console.log(res);
+        // console.log(res);
 
         this.recommends = res.data.list;
       }),
@@ -120,7 +127,7 @@ export default {
         this.themeTopYs.push(this.$refs.recommend.$el.offsetTop);
         this.themeTopYs.push(Number.MAX_VALUE);
 
-        console.log(this.themeTopYs);
+        // console.log(this.themeTopYs);
       }));
   },
   mounted() {},
@@ -165,10 +172,25 @@ export default {
           positionY < this.themeTopYs[i + 1]
         ) {
           this.currentIndex = i;
-          console.log(this.currentIndex);
+          // console.log(this.currentIndex);
           this.$refs.nav.currentIndex = this.currentIndex;
         }
       }
+      //3.是否显示回到顶部
+      this.isShowBackTop = -position.y > 1000;
+    },
+    addToCart() {
+      //1.获取购物车需要展示的商品信息
+      const product = {};
+      product.image = this.topImages[0];
+      product.title = this.goods.title;
+      product.desc = this.goods.desc;
+      product.price = this.goods.realPrice;
+      product.iid = this.iid;
+
+      //2.将商品添加到购物车里
+      // this.$store.commit("addCart", product);
+      this.$store.dispatch('addToCart', product);
     }
   }
 };
@@ -189,7 +211,7 @@ export default {
 }
 
 .content {
-  height: calc(100% - 44px);
+  height: calc(100% - 90px);
 }
 
 .like {
