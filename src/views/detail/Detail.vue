@@ -1,15 +1,20 @@
 <template>
   <div id="detail">
-    <detail-nav-bar class="detail-nav" />
-    <scroll class="content" ref="scroll">
-      <detail-swiper :topImages="topImages" />
+    <detail-nav-bar class="detail-nav" @titleClick="titleClick" ref="nav" />
+    <scroll
+      class="content"
+      ref="scroll"
+      :probe-type="3"
+      @scroll="contentScroll"
+    >
+      <detail-swiper :top-images="topImages" />
       <detail-base-info :goods="goods" />
       <detail-shop-info :shop="shop" />
       <detail-goods-info :detail-info="detailInfo" @imageLoad="imageLoad" />
-      <detail-param-info :param-info="paramInfo" />
-      <detail-comment-info :comment-info="commentInfo" />
+      <detail-param-info :param-info="paramInfo" ref="params" />
+      <detail-comment-info :comment-info="commentInfo" ref="comment" />
       <div class="like">猜你喜欢</div>
-      <goods-list :goods="recommends" />
+      <goods-list :goods="recommends" ref="recommend" />
     </scroll>
   </div>
 </template>
@@ -59,7 +64,9 @@ export default {
       paramInfo: {},
       commentInfo: {},
       recommends: [],
-      
+      themeTopYs: [],
+      getthemeTopY: null,
+      currentIndex: 0
     };
   },
   created() {
@@ -103,17 +110,66 @@ export default {
         console.log(res);
 
         this.recommends = res.data.list;
-      });
+      }),
+      ///给getthemeTopY赋值(对给getthemeTopY赋值的操作进行防抖)
+      (this.getthemeTopY = debounce(() => {
+        this.themeTopYs = [];
+        this.themeTopYs.push(0);
+        this.themeTopYs.push(this.$refs.params.$el.offsetTop - 10);
+        this.themeTopYs.push(this.$refs.comment.$el.offsetTop);
+        this.themeTopYs.push(this.$refs.recommend.$el.offsetTop);
+        this.themeTopYs.push(Number.MAX_VALUE);
+
+        console.log(this.themeTopYs);
+      }));
+  },
+  mounted() {},
+
+  destroyed() {
+    this.$bus.$off("itemImageLoad", this.itemimglistener);
   },
 
   methods: {
     imageLoad() {
       this.$refs.scroll.refresh();
+      this.getthemeTopY();
+    },
+    titleClick(index) {
+      console.log(index);
+      this.$refs.scroll.scrollTo(0, -this.themeTopYs[index], 100);
+    },
+    contentScroll(position) {
+      //1.获取Y值
+      const positionY = -position.y;
+
+      //2.positionY和主题中的值对比
+      let length = this.themeTopYs.length;
+      for (let i = 0; i < length - 1; i++) {
+        // if (
+        //   positionY > this.themeTopYs[i] &&
+        //   positionY < this.themeTopYs[i + 1]
+        // ) {
+        //   console.log(i);
+        // }
+
+        // if (
+        //   this.currentIndex !== i &&
+        //   ((i < length - 1 &&
+        //     positionY >= this.themeTopYs[i] &&
+        //     positionY < this.themeTopYs[i + 1]) ||
+        //     (i === length - 1 && positionY >= this.themeTopYs[i]))
+        // )
+        if (
+          this.currentIndex !== i &&
+          positionY >= this.themeTopYs[i] &&
+          positionY < this.themeTopYs[i + 1]
+        ) {
+          this.currentIndex = i;
+          console.log(this.currentIndex);
+          this.$refs.nav.currentIndex = this.currentIndex;
+        }
+      }
     }
-  },
-  mounted() {},
-  destroyed() {
-    this.$bus.$off("itemImageLoad", this.itemimglistener);
   }
 };
 </script>

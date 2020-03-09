@@ -1,0 +1,125 @@
+Date : 2020-03-09 09:22:12
+Directory : f:\vscode\learnVuejs-axios\supermall
+Total : 63 files,  13372 codes, 271 comments, 356 blanks, all 13999 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          2 |     10,918 |          0 |          2 |     10,920 |
+| Vue        |         27 |      1,858 |        123 |        221 |      2,202 |
+| JavaScript |         10 |        199 |         16 |         34 |        249 |
+| CSS        |          2 |        189 |        130 |         82 |        401 |
+| XML        |         19 |        165 |          0 |          9 |        174 |
+| HTML       |          1 |         20 |          2 |          1 |         23 |
+| Markdown   |          1 |         15 |          0 |          5 |         20 |
+| Properties |          1 |          8 |          0 |          2 |         10 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                   | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                      |         63 |     13,372 |        271 |        356 |     13,999 |
+| public                                                                                 |          1 |         20 |          2 |          1 |         23 |
+| src                                                                                    |         56 |      2,393 |        269 |        344 |      3,006 |
+| src\assets                                                                             |         21 |        354 |        130 |         91 |        575 |
+| src\assets\css                                                                         |          2 |        189 |        130 |         82 |        401 |
+| src\assets\img                                                                         |         19 |        165 |          0 |          9 |        174 |
+| src\assets\img\cart                                                                    |          1 |          1 |          0 |          0 |          1 |
+| src\assets\img\common                                                                  |          3 |          3 |          0 |          1 |          4 |
+| src\assets\img\profile                                                                 |          7 |          7 |          0 |          0 |          7 |
+| src\assets\img\tabbar                                                                  |          8 |        154 |          0 |          8 |        162 |
+| src\common                                                                             |          2 |         52 |          7 |          6 |         65 |
+| src\components                                                                         |         12 |        608 |         53 |         80 |        741 |
+| src\components\common                                                                  |          7 |        363 |         53 |         56 |        472 |
+| src\components\common\navbar                                                           |          1 |         34 |          0 |          4 |         38 |
+| src\components\common\scroll                                                           |          1 |         64 |          3 |          4 |         71 |
+| src\components\common\swiper                                                           |          3 |        192 |         45 |         39 |        276 |
+| src\components\common\tabbar                                                           |          2 |         73 |          5 |          9 |         87 |
+| src\components\content                                                                 |          5 |        245 |          0 |         24 |        269 |
+| src\components\content\backTop                                                         |          1 |         21 |          0 |          1 |         22 |
+| src\components\content\goods                                                           |          2 |        114 |          0 |         14 |        128 |
+| src\components\content\mainTabbar                                                      |          1 |         52 |          0 |          4 |         56 |
+| src\components\content\tabControl                                                      |          1 |         58 |          0 |          5 |         63 |
+| src\network                                                                            |          3 |         76 |          9 |         15 |        100 |
+| src\router                                                                             |          1 |         39 |          0 |          6 |         45 |
+| src\views                                                                              |         15 |      1,235 |         70 |        138 |      1,443 |
+| src\views\cart                                                                         |          1 |         10 |          0 |          4 |         14 |
+| src\views\category                                                                     |          1 |        142 |          7 |          4 |        153 |
+| src\views\detail                                                                       |          8 |        749 |         34 |        100 |        883 |
+| src\views\detail\childComps                                                            |          7 |        592 |          9 |         79 |        680 |
+| src\views\home                                                                         |          4 |        260 |         29 |         27 |        316 |
+| src\views\home\childComps                                                              |          3 |         99 |          0 |         11 |        110 |
+| src\views\profile                                                                      |          1 |         74 |          0 |          3 |         77 |
++----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                               | language   | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| f:\vscode\learnVuejs-axios\supermall\.editorconfig                                     | Properties |          8 |          0 |          2 |         10 |
+| f:\vscode\learnVuejs-axios\supermall\README.md                                         | Markdown   |         15 |          0 |          5 |         20 |
+| f:\vscode\learnVuejs-axios\supermall\babel.config.js                                   | JavaScript |          5 |          0 |          1 |          6 |
+| f:\vscode\learnVuejs-axios\supermall\package-lock.json                                 | JSON       |     10,897 |          0 |          1 |     10,898 |
+| f:\vscode\learnVuejs-axios\supermall\package.json                                      | JSON       |         21 |          0 |          1 |         22 |
+| f:\vscode\learnVuejs-axios\supermall\public\index.html                                 | HTML       |         20 |          2 |          1 |         23 |
+| f:\vscode\learnVuejs-axios\supermall\src\App.vue                                       | Vue        |         20 |          0 |          5 |         25 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\css\base.css                           | CSS        |         46 |          2 |          9 |         57 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\css\normalize.css                      | CSS        |        143 |        128 |         73 |        344 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\img\cart\tick.svg                      | XML        |          1 |          0 |          0 |          1 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\img\common\arrow-left.svg              | XML        |          1 |          0 |          0 |          1 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\img\common\back.svg                    | XML        |          1 |          0 |          1 |          2 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\img\common\collect.svg                 | XML        |          1 |          0 |          0 |          1 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\img\profile\avatar.svg                 | XML        |          1 |          0 |          0 |          1 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\img\profile\cart.svg                   | XML        |          1 |          0 |          0 |          1 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\img\profile\message.svg                | XML        |          1 |          0 |          0 |          1 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\img\profile\phone.svg                  | XML        |          1 |          0 |          0 |          1 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\img\profile\pointer.svg                | XML        |          1 |          0 |          0 |          1 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\img\profile\shopping.svg               | XML        |          1 |          0 |          0 |          1 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\img\profile\vip.svg                    | XML        |          1 |          0 |          0 |          1 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\img\tabbar\category.svg                | XML        |         21 |          0 |          1 |         22 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\img\tabbar\category_active.svg         | XML        |         21 |          0 |          1 |         22 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\img\tabbar\home.svg                    | XML        |         19 |          0 |          1 |         20 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\img\tabbar\home_active.svg             | XML        |         19 |          0 |          1 |         20 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\img\tabbar\profile.svg                 | XML        |         19 |          0 |          1 |         20 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\img\tabbar\profile_active.svg          | XML        |         19 |          0 |          1 |         20 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\img\tabbar\shopcart.svg                | XML        |         18 |          0 |          1 |         19 |
+| f:\vscode\learnVuejs-axios\supermall\src\assets\img\tabbar\shopcart_active.svg         | XML        |         18 |          0 |          1 |         19 |
+| f:\vscode\learnVuejs-axios\supermall\src\common\mixin.js                               | JavaScript |         15 |          6 |          3 |         24 |
+| f:\vscode\learnVuejs-axios\supermall\src\common\utils.js                               | JavaScript |         37 |          1 |          3 |         41 |
+| f:\vscode\learnVuejs-axios\supermall\src\components\common\navbar\NavBar.vue           | Vue        |         34 |          0 |          4 |         38 |
+| f:\vscode\learnVuejs-axios\supermall\src\components\common\scroll\Scroll.vue           | Vue        |         64 |          3 |          4 |         71 |
+| f:\vscode\learnVuejs-axios\supermall\src\components\common\swiper\Swiper.vue           | Vue        |        168 |         45 |         33 |        246 |
+| f:\vscode\learnVuejs-axios\supermall\src\components\common\swiper\SwiperItem.vue       | Vue        |         19 |          0 |          4 |         23 |
+| f:\vscode\learnVuejs-axios\supermall\src\components\common\swiper\index.js             | JavaScript |          5 |          0 |          2 |          7 |
+| f:\vscode\learnVuejs-axios\supermall\src\components\common\tabbar\TabBar.vue           | Vue        |         21 |          0 |          5 |         26 |
+| f:\vscode\learnVuejs-axios\supermall\src\components\common\tabbar\TabBarItem.vue       | Vue        |         52 |          5 |          4 |         61 |
+| f:\vscode\learnVuejs-axios\supermall\src\components\content\backTop\BackTop.vue        | Vue        |         21 |          0 |          1 |         22 |
+| f:\vscode\learnVuejs-axios\supermall\src\components\content\goods\GoodsList.vue        | Vue        |         34 |          0 |          5 |         39 |
+| f:\vscode\learnVuejs-axios\supermall\src\components\content\goods\GoodsListItem.vue    | Vue        |         80 |          0 |          9 |         89 |
+| f:\vscode\learnVuejs-axios\supermall\src\components\content\mainTabbar\MainTabBar.vue  | Vue        |         52 |          0 |          4 |         56 |
+| f:\vscode\learnVuejs-axios\supermall\src\components\content\tabControl\TabControl.vue  | Vue        |         58 |          0 |          5 |         63 |
+| f:\vscode\learnVuejs-axios\supermall\src\main.js                                       | JavaScript |          9 |          0 |          3 |         12 |
+| f:\vscode\learnVuejs-axios\supermall\src\network\detail.js                             | JavaScript |         41 |          1 |          6 |         48 |
+| f:\vscode\learnVuejs-axios\supermall\src\network\home.js                               | JavaScript |         12 |          2 |          4 |         18 |
+| f:\vscode\learnVuejs-axios\supermall\src\network\request.js                            | JavaScript |         23 |          6 |          5 |         34 |
+| f:\vscode\learnVuejs-axios\supermall\src\router\index.js                               | JavaScript |         39 |          0 |          6 |         45 |
+| f:\vscode\learnVuejs-axios\supermall\src\views\cart\Cart.vue                           | Vue        |         10 |          0 |          4 |         14 |
+| f:\vscode\learnVuejs-axios\supermall\src\views\category\Category.vue                   | Vue        |        142 |          7 |          4 |        153 |
+| f:\vscode\learnVuejs-axios\supermall\src\views\detail\Detail.vue                       | Vue        |        157 |         25 |         21 |        203 |
+| f:\vscode\learnVuejs-axios\supermall\src\views\detail\childComps\DetailBaseInfo.vue    | Vue        |         95 |          2 |         14 |        111 |
+| f:\vscode\learnVuejs-axios\supermall\src\views\detail\childComps\DetailCommentInfo.vue | Vue        |        108 |          2 |         17 |        127 |
+| f:\vscode\learnVuejs-axios\supermall\src\views\detail\childComps\DetailGoodsInfo.vue   | Vue        |         93 |          2 |         12 |        107 |
+| f:\vscode\learnVuejs-axios\supermall\src\views\detail\childComps\DetailNavBar.vue      | Vue        |         58 |          0 |          1 |         59 |
+| f:\vscode\learnVuejs-axios\supermall\src\views\detail\childComps\DetailParamInfo.vue   | Vue        |         64 |          1 |         12 |         77 |
+| f:\vscode\learnVuejs-axios\supermall\src\views\detail\childComps\DetailShopInfo.vue    | Vue        |        143 |          2 |         20 |        165 |
+| f:\vscode\learnVuejs-axios\supermall\src\views\detail\childComps\DetailSwiper.vue      | Vue        |         31 |          0 |          3 |         34 |
+| f:\vscode\learnVuejs-axios\supermall\src\views\home\Home.vue                           | Vue        |        161 |         29 |         16 |        206 |
+| f:\vscode\learnVuejs-axios\supermall\src\views\home\childComps\FeatureView.vue         | Vue        |         17 |          0 |          3 |         20 |
+| f:\vscode\learnVuejs-axios\supermall\src\views\home\childComps\HomeSwiper.vue          | Vue        |         41 |          0 |          4 |         45 |
+| f:\vscode\learnVuejs-axios\supermall\src\views\home\childComps\RecommendView.vue       | Vue        |         41 |          0 |          4 |         45 |
+| f:\vscode\learnVuejs-axios\supermall\src\views\profile\Profile.vue                     | Vue        |         74 |          0 |          3 |         77 |
+| f:\vscode\learnVuejs-axios\supermall\vue.config.js                                     | JavaScript |         13 |          0 |          1 |         14 |
+| Total                                                                                  |            |     13,372 |        271 |        356 |     13,999 |
++----------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
