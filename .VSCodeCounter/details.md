@@ -1,10 +1,10 @@
 # Details
 
-Date : 2020-03-10 13:47:49
+Date : 2020-03-10 14:00:22
 
 Directory f:\vscode\learnVuejs-axios\supermall
 
-Total : 75 files,  13904 codes, 331 comments, 447 blanks, all 14682 lines
+Total : 78 files,  14039 codes, 331 comments, 477 blanks, all 14847 lines
 
 [summary](results.md)
 
@@ -84,7 +84,10 @@ Total : 75 files,  13904 codes, 331 comments, 447 blanks, all 14682 lines
 | [src/views/home/childComps/FeatureView.vue](/src/views/home/childComps/FeatureView.vue) | Vue | 17 | 0 | 3 | 20 |
 | [src/views/home/childComps/HomeSwiper.vue](/src/views/home/childComps/HomeSwiper.vue) | Vue | 41 | 0 | 4 | 45 |
 | [src/views/home/childComps/RecommendView.vue](/src/views/home/childComps/RecommendView.vue) | Vue | 41 | 0 | 4 | 45 |
-| [src/views/profile/Profile.vue](/src/views/profile/Profile.vue) | Vue | 74 | 0 | 3 | 77 |
+| [src/views/profile/Profile.vue](/src/views/profile/Profile.vue) | Vue | 46 | 0 | 6 | 52 |
+| [src/views/profile/childComps/AccountInfo.vue](/src/views/profile/childComps/AccountInfo.vue) | Vue | 48 | 0 | 8 | 56 |
+| [src/views/profile/childComps/NormalListView.vue](/src/views/profile/childComps/NormalListView.vue) | Vue | 59 | 0 | 8 | 67 |
+| [src/views/profile/childComps/UserInfo.vue](/src/views/profile/childComps/UserInfo.vue) | Vue | 56 | 0 | 11 | 67 |
 | [vue.config.js](/vue.config.js) | JavaScript | 13 | 0 | 1 | 14 |
 
 [summary](results.md)

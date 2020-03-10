@@ -1,10 +1,10 @@
 # Summary
 
-Date : 2020-03-10 13:47:49
+Date : 2020-03-10 14:00:22
 
 Directory f:\vscode\learnVuejs-axios\supermall
 
-Total : 75 files,  13904 codes, 331 comments, 447 blanks, all 14682 lines
+Total : 78 files,  14039 codes, 331 comments, 477 blanks, all 14847 lines
 
 [details](details.md)
 
@@ -12,7 +12,7 @@ Total : 75 files,  13904 codes, 331 comments, 447 blanks, all 14682 lines
 | language | files | code | comment | blank | total |
 | :--- | ---: | ---: | ---: | ---: | ---: |
 | JSON | 2 | 10,936 | 0 | 2 | 10,938 |
-| Vue | 33 | 2,279 | 164 | 282 | 2,725 |
+| Vue | 36 | 2,414 | 164 | 312 | 2,890 |
 | JavaScript | 16 | 292 | 35 | 64 | 391 |
 | CSS | 2 | 189 | 130 | 82 | 401 |
 | XML | 19 | 165 | 0 | 9 | 174 |
@@ -23,9 +23,9 @@ Total : 75 files,  13904 codes, 331 comments, 447 blanks, all 14682 lines
 ## Directories
 | path | files | code | comment | blank | total |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| . | 75 | 13,904 | 331 | 447 | 14,682 |
+| . | 78 | 14,039 | 331 | 477 | 14,847 |
 | public | 1 | 20 | 2 | 1 | 23 |
-| src | 68 | 2,907 | 329 | 435 | 3,671 |
+| src | 71 | 3,042 | 329 | 465 | 3,836 |
 | src\assets | 21 | 354 | 130 | 91 | 575 |
 | src\assets\css | 2 | 189 | 130 | 82 | 401 |
 | src\assets\img | 19 | 165 | 0 | 9 | 174 |
@@ -50,7 +50,7 @@ Total : 75 files,  13904 codes, 331 comments, 447 blanks, all 14682 lines
 | src\network | 3 | 76 | 9 | 15 | 100 |
 | src\router | 1 | 39 | 0 | 6 | 45 |
 | src\store | 5 | 57 | 10 | 17 | 84 |
-| src\views | 19 | 1,590 | 103 | 189 | 1,882 |
+| src\views | 22 | 1,725 | 103 | 219 | 2,047 |
 | src\views\cart | 4 | 270 | 9 | 35 | 314 |
 | src\views\cart\childComps | 3 | 229 | 8 | 29 | 266 |
 | src\views\category | 1 | 142 | 7 | 4 | 153 |
@@ -58,6 +58,7 @@ Total : 75 files,  13904 codes, 331 comments, 447 blanks, all 14682 lines
 | src\views\detail\childComps | 8 | 676 | 10 | 92 | 778 |
 | src\views\home | 4 | 257 | 29 | 27 | 313 |
 | src\views\home\childComps | 3 | 99 | 0 | 11 | 110 |
-| src\views\profile | 1 | 74 | 0 | 3 | 77 |
+| src\views\profile | 4 | 209 | 0 | 33 | 242 |
+| src\views\profile\childComps | 3 | 163 | 0 | 27 | 190 |
 
 [details](details.md)
