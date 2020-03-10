@@ -7,9 +7,6 @@
       :probe-type="3"
       @scroll="contentScroll"
     >
-      <ul>
-        <li v-for="item in $store.state.cartList">{{ item }}</li>
-      </ul>
       <detail-swiper :top-images="topImages" />
       <detail-base-info :goods="goods" />
       <detail-shop-info :shop="shop" />
@@ -21,6 +18,7 @@
     </scroll>
     <detail-bottom-bar @addCart="addToCart" />
     <back-top @click.native="backClick" v-show="isShowBackTop" />
+    <!-- <toast :message="message" :show="show" /> -->
   </div>
 </template>
 
@@ -36,6 +34,7 @@ import DetailBottomBar from "./childComps/DetailBottomBar";
 
 import Scroll from "components/common/scroll/Scroll";
 import GoodsList from "components/content/goods/GoodsList";
+// import Toast from "components/common/toast/Toast";
 
 import {
   getDetail,
@@ -46,6 +45,9 @@ import {
 } from "network/detail";
 import { debounce } from "common/utils";
 import { itemListerMixin, backTopMixin } from "common/mixin";
+
+// import { mapActions } from "vuex";
+
 export default {
   name: "Detail",
   components: {
@@ -59,6 +61,7 @@ export default {
     DetailBottomBar,
     Scroll,
     GoodsList
+    // Toast
   },
   mixins: [itemListerMixin, backTopMixin],
   data() {
@@ -74,6 +77,8 @@ export default {
       themeTopYs: [],
       getthemeTopY: null,
       currentIndex: 0
+      // message: "",
+      // show: false
     };
   },
   created() {
@@ -137,6 +142,7 @@ export default {
   },
 
   methods: {
+    // ...mapActions(["addToCart"]),
     imageLoad() {
       this.$refs.scroll.refresh();
       this.getthemeTopY();
@@ -188,9 +194,25 @@ export default {
       product.price = this.goods.realPrice;
       product.iid = this.iid;
 
-      //2.将商品添加到购物车里
+      //2.将商品添加到购物车里(1.Primise 2.mapActions)
       // this.$store.commit("addCart", product);
-      this.$store.dispatch('addToCart', product);
+
+      // this.addToCart(product).then(res => {
+      //   console.log(res);
+      // });
+
+      this.$store.dispatch("addToCart", product).then(res => {
+        // this.show = true;
+        // this.message = res;
+
+        // setTimeout(() => {
+        //   this.show = false;
+        //   this.message = " ";
+        // }, 1500);
+        this.$toast.show(res, 2000);
+
+        console.log(this.$toast);
+      });
     }
   }
 };
